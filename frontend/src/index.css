@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0B0B0E;
+    color: #F3F4F6;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0B0E;
+}
+::-webkit-scrollbar-thumb {
+  background: #272737;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E50914;
+}
+
+/* Curved cinematic screen illustration */
+.cinema-screen {
+  height: 40px;
+  background: linear-gradient(180deg, rgba(229, 9, 20, 0.4) 0%, rgba(255, 255, 255, 0.8) 20%, rgba(11, 11, 14, 0.95) 100%);
+  border-top: 3px solid #F3F4F6;
+  border-radius: 50% / 100% 100% 0% 0%;
+  transform: rotateX(-35deg);
+  transform-style: preserve-3d;
+  box-shadow: 0 25px 40px -10px rgba(229, 9, 20, 0.5), 0 -10px 25px rgba(255,255,255,0.2);
+}
+
+/* Perforated ticket edge effect for My Bookings dashboard */
+.ticket-card {
+  position: relative;
+  overflow: hidden;
+}
+.ticket-card::before,
+.ticket-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  background-color: #0B0B0E;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.ticket-card::before {
+  left: -12px;
+  border: 1px solid #272737;
+}
+.ticket-card::after {
+  right: -12px;
+  border: 1px solid #272737;
+}
+
+/* Glassmorphic backdrop blur */
+.glass-panel {
+  background: rgba(21, 21, 28, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
